@@ -3,6 +3,7 @@
     padding: 0;
     box-sizing: border-box;
 }
+
 .cardFlex{
     display: flex;
     flex-direction: row;
@@ -12,8 +13,7 @@
     margin-top:15%;
 }
 .cardFlex img{
-    margin-top: -5%;
-    
+    margin-top: -5%;    
 }
 
 
@@ -49,7 +49,7 @@ body{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-top: 5%;
+    
 }
 .btn {
     width: 130px;
@@ -77,20 +77,21 @@ body{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 55px;
-    height: 55px;
-    border-radius: 5px;
+    width: 35px;
+    height: 35px;
+    border-radius: 50px;
     background-color: rgb(255, 95, 95);
     cursor: pointer;
     border: 1px solid rgb(255, 201, 201);
     transition-duration: 0.3s;
-    margin-left: auto;
+    margin-top: 3%;
+    margin-left: 85%;
   }
   .bin-bottom {
-    width: 15px;
+    width: 11px;
 }
   .bin-top {
-    width: 17px;
+    width: 11px;
     transform-origin: right;
     transition-duration: 0.3s;
   }
@@ -108,15 +109,17 @@ body{
        transition: all 0.2s;
     transform: translateY(-5px);
     box-shadow: 0 2px 0 -2px #f85959,
-     0 8px 0 -4px #39a2db,
+     0 8px 0 -4px #39a2db
      0 12px 10px -3px #39a2db;
    }
 .input {
     border: none;
     max-width: 700px;
     margin: auto;
+    color: blue;
     outline: none;
     border-radius: 15px;
+    margin-top: 5%;
     padding: 1em;
     background-color: #ccc;
     box-shadow: inset 2px 5px 10px rgba(0,0,0,0.3);
@@ -140,6 +143,7 @@ body{
     border: 1px solid green;
     font-size: 13px;
     font-weight: lighter;
+    color: white;
     font-family: monospace;
     background: rgba(0, 0, 255, 0.705);
 }
@@ -152,7 +156,7 @@ body{
     background: gainsboro;
 }
 form label{
- margin-left: 38%;
+    text-align: center;
  font-weight: bolder;
  font-family: monospace;
  font-size: 25px;
@@ -162,7 +166,7 @@ form label{
 .card{
     background-image: url('./Images/beautiful-blue-sky_23-2147609755.avif');
     background-size: cover;
-    margin-top: 2%;
+    margin-top: 5%;
 }
 .FG{
     display: flex;
@@ -171,16 +175,19 @@ form label{
 .more-info-button{
     font-size: 13px;
     font-weight: lighter;
+    border-radius: 50px;
+    width: 300px;
+    margin: auto;
     font-family:'Times New Roman', Times, serif;
-    color: rgba(0, 0, 255, 0.616);
+    color: black;
     /* text-decoration: underline; */
     border: none;
     /* border-bottom: 1px solid blue; */
-    border-radius: 5px;
+    /* border-radius: 5px; */
 }
 .more-info-button i{
     margin-top: 1%;
-    color: rgba(0, 0, 255, 0.616);
+    color: black;
 }
 .more-info-container h4{
     font-size: 14px;
@@ -226,10 +233,11 @@ nav,
 
 nav {
 	border-radius: 6px;
+    margin-top: 1%;
 	background-image: linear-gradient(
-		rgb(48, 48, 48) 13%,
+blue,
 		rgb(30, 30, 30) 40%,
-		#0c0d11 86%
+		#ffffff 86%
 	);
 	color: rgba(255, 255, 255, 0.6);
 	text-shadow: 0 -2px 0 black;
@@ -245,9 +253,16 @@ nav {
 	min-width: 120px;
 	justify-content: space-between;
 	transition: all 80ms ease;
-
+    
+}
+.nav-item a{
+text-decoration: none;
+color: white;
+}
+.nav-item a:hover{
+    color: aqua;
+    }
 	&.active {
-		color: $primary;
 		text-shadow: 0 0 3px hsla(260, 100%, 70%, 0.7);
 	}
 
@@ -304,5 +319,189 @@ nav {
 	.icon > svg {
 		max-width: 16px;
 	}
+
+
+.hr{
+    display: flex;
+    flex-direction: row;
 }
 
+button {
+    position: relative;
+    padding: 10px 20px;
+    border-radius: 7px;
+    border: 1px solid rgb(61, 106, 255);
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 2px;
+    background: transparent;
+    color: #fff;
+    overflow: hidden;
+    box-shadow: 0 0 0 0 transparent;
+    -webkit-transition: all 0.2s ease-in;
+    -moz-transition: all 0.2s ease-in;
+    transition: all 0.2s ease-in;
+  }
+  
+  button:hover {
+    background: rgb(61, 106, 255);
+    box-shadow: 0 0 30px 5px rgba(0, 142, 236, 0.815);
+    -webkit-transition: all 0.2s ease-out;
+    -moz-transition: all 0.2s ease-out;
+    transition: all 0.2s ease-out;
+  }
+  
+  button:hover::before {
+    -webkit-animation: sh02 0.5s 0s linear;
+    -moz-animation: sh02 0.5s 0s linear;
+    animation: sh02 0.5s 0s linear;
+  }
+  
+  button::before {
+    content: '';
+    display: block;
+    width: 0px;
+    height: 86%;
+    position: absolute;
+    top: 7%;
+    left: 0%;
+    opacity: 0;
+    background: #fff;
+    box-shadow: 0 0 50px 30px #fff;
+    -webkit-transform: skewX(-20deg);
+    -moz-transform: skewX(-20deg);
+    -ms-transform: skewX(-20deg);
+    -o-transform: skewX(-20deg);
+    transform: skewX(-20deg);
+  }
+  
+  @keyframes sh02 {
+    from {
+      opacity: 0;
+      left: 0%;
+    }
+  
+    50% {
+      opacity: 1;
+    }
+  
+    to {
+      opacity: 0;
+      left: 100%;
+    }
+  }
+  
+  button:active {
+    box-shadow: 0 0 0 0 transparent;
+    -webkit-transition: box-shadow 0.2s ease-in;
+    -moz-transition: box-shadow 0.2s ease-in;
+    transition: box-shadow 0.2s ease-in;
+  }
+
+/* ////////////////////////////////   */
+
+/* .social-links,.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .social-btn {
+    cursor: pointer;
+    height: 50px;
+    width: 50px;
+    font-family: 'Titillium Web', sans-serif;
+    color: #333;
+    border-radius: 10px;
+    box-shadow: 0px 10px 10px rgba(0,0,0,0.1);
+    background: white;
+    margin: 5px;
+    transition: 0.3s;
+    justify-content: center;
+  }
+  
+  .social-btn svg {
+    height: 24px;
+    width: 24px;
+  }
+  
+  .social-btn span {
+    width: 0px;
+    overflow: hidden;
+    transition: 0.3s;
+    text-align: center;
+    margin-left: 5px;
+  }
+  
+  .social-btn:hover {
+    width: 150px;
+    border-radius: 5px;
+  }
+  
+  .social-btn:hover span {
+    padding: 2px;
+    width: 80px;
+  }
+  
+  #twitter svg {
+    fill: #1da1f2;
+  }
+  
+  #linkedin svg {
+    fill: #0e76a8;
+  }
+  
+  #github {
+    fill: #333;
+  }
+  
+   */
+
+   /* /////////////////////////////////////////////////   More Info */
+  .cCard{
+    background: white;
+    border-radius: 10px;
+    padding: 1%;
+  }
+
+
+
+
+  /* /////////////////////////////////////// */
+  .Aa{
+    text-decoration: none;
+  }
+  /* <main-style> ============================ */
+  .scroll-up {
+    /* position: fixed; */
+    right: 3rem;
+    bottom: -50%;
+    z-index: 10;
+    width: 32px;
+    height: 32px;
+    border-radius: 4px;
+    background-color: rgba(0, 0, 240, 0.7);
+    backdrop-filter: saturate(180%) blur(20px);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    transition: bottom .4s, transform .4s;
+  }
+  
+  .scroll-up:hover {
+    transform: translateY(-.25rem);
+  }
+  
+  /* Show scroll-up */
+  ._show-scroll {
+    bottom: 3rem;
+  }
+  
+  @media (max-width: 1199.98px) {
+    .scroll-up {
+      right: 1rem;
+    }
+  }

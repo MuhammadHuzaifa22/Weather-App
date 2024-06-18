@@ -8,30 +8,35 @@ const hthree = document.querySelector('h3');
 
 form.addEventListener('submit', function(event) {
   event.preventDefault();
+  if(city.value === ''  ){
+    alert("Please input "+toUnicodeVariant('City name', 'bold sans', 'bold'));
+  }
 
+  
   axios(
     `http://api.weatherapi.com/v1/current.json?key=dae9933c87e147abadb51806241406&q=${city.value}&aqi=no`
   )
   .then((res) => {
     console.log(res.data);
-
+    
     // Create the card container
     const card = document.createElement('div');
     card.classList.add('card', 'd-flex', 'justify-content-center');
     card.style.width = '22rem';
     card.style.border = '1px solid #000';
+    card.style.borderRadius = '50px';
     card.style.boxShadow = '3px 3px 3px rgba(0, 0, 0, 0.5)';
 
     // Set the inner HTML of the card directly
     
     card.innerHTML = `
     <button class="delete-button">
-  <svg
+    <svg
     class="bin-top"
     viewBox="0 0 39 7"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
-  >
+    >
     <line y1="5" x2="39" y2="5" stroke="white" stroke-width="4"></line>
     <line
       x1="12"
@@ -48,20 +53,20 @@ form.addEventListener('submit', function(event) {
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
   >
-    <mask id="path-1-inside-1_8_19" fill="white">
-      <path
+  <mask id="path-1-inside-1_8_19" fill="white">
+  <path
         d="M0 0H33V35C33 37.2091 31.2091 39 29 39H4C1.79086 39 0 37.2091 0 35V0Z"
       ></path>
-    </mask>
-    <path
+      </mask>
+      <path
       d="M0 0H33H0ZM37 35C37 39.4183 33.4183 43 29 43H4C-0.418278 43 -4 39.4183 -4 35H4H29H37ZM4 43C-0.418278 43 -4 39.4183 -4 35V0H4V35V43ZM37 0V35C37 39.4183 33.4183 43 29 43V35V0H37Z"
       fill="white"
       mask="url(#path-1-inside-1_8_19)"
-    ></path>
-    <path d="M12 6L12 29" stroke="white" stroke-width="4"></path>
-    <path d="M21 6V29" stroke="white" stroke-width="4"></path>
-  </svg>
-</button>
+      ></path>
+      <path d="M12 6L12 29" stroke="white" stroke-width="4"></path>
+      <path d="M21 6V29" stroke="white" stroke-width="4"></path>
+      </svg>
+      </button>
     <div class="FG">
     <div class="card-body">
         <h2 class="card-title">${res.data.location.name}</h2>
@@ -90,7 +95,13 @@ form.addEventListener('submit', function(event) {
       <button class="more-info-button">Show More <i class="fa-solid fa-angle-down"></i></button>
       </div>
       `;
+    
+
+    
+    
+    
       
+   city.value = ''   
     // Append the card to the cards container
     cardsContainer.appendChild(card);
     // Attach event listener to the "More Info" button
@@ -232,4 +243,127 @@ function toUnicodeVariant(str, variant, flags) {
       if (strike) result += '\u0336' // add combining strike
   }
   return result
+}
+let userData = localStorage.getItem('users');
+console.log(userData);
+let userdataJsonparse = JSON.parse(userData);
+const hone = document.querySelector('h1');
+console.log(userdataJsonparse[0].username);
+const card1 = document.querySelector('.cCard');
+let cardArr = [];
+let subIndex = 0;
+    if(userdataJsonparse[0].username != null){
+      card1.innerHTML = `Hi ${userdataJsonparse[0].username}! thank you for registering  my website <div class="centralize">
+      <div>
+      <button id="Read">
+        <span>Read</span>
+        <span><i class="fa-solid fa-check">Read</i></span>
+      </button>
+      <div>
+      
+      <div></div></div></div></div></div></div>
+      `
+      cardArr.push(card1.innerHTML)
+      console.log(card1.innerHTML)
+      console.log(cardArr)
+      let storedUser = localStorage.getItem('cardArr')
+let Users = storedUser ? JSON.parse(storedUser) : [];
+let UpdatedUsersJSON = JSON.stringify(Users);
+localStorage.setItem('cardArr', UpdatedUsersJSON);
+      for(let i = 0;i < cardArr.length; i++){
+        if(cardArr != null){
+
+          card1.style.display = 'none'
+          if(cardArr[0]){
+            const subicon = document.querySelector('.subicon');
+            subIndex++;
+            subicon.innerHTML = + subIndex;
+console.log(subicon.innerHTML)
+          }
+        }
+        else{
+          hone.style.color = 'red'
+          hone.innerHTML = `You have not registered yet`
+        }
+      }
+  
+  const read = document.querySelector('#Read');
+  read.addEventListener('click',function(event){
+      event.preventDefault();
+    subIndex--;
+    const subicon = document.querySelector('.subicon');
+    subicon.innerHTML = + subIndex;
+    localStorage.removeItem('username');
+    card1.style.display = 'none'
+    Users.forEach(user => {
+      if (user.username) {
+          delete user.username;
+      }
+  });
+  localStorage.setItem('users', JSON.stringify(Users));
+    
+  })
+}
+
+
+///////////////////////////////////////////////////////////////////////////////////////
+
+let userDAta = localStorage.getItem('users');
+console.log(userDAta);
+let userdataJSonparse = JSON.parse(userDAta);
+console.log(userdataJSonparse[0].username);
+const carD1 = document.querySelector('.cCard');
+let cardARr = [];
+let subINdex = 0;
+    if(userdataJSonparse[0].username != null){
+      card1.innerHTML = `Hi ${userdataJSonparse[0].username}! thank you for registering  my website <div class="centralize">
+      <div>
+      <button id="Read">
+        <span>Read</span>
+        <span><i class="fa-solid fa-check">Read</i></span>
+      </button>
+      <div>
+      
+      <div></div></div></div></div></div></div>
+      `
+      cardArr.push(carD1.innerHTML)
+      console.log(carD1.innerHTML)
+      console.log(cardARr)
+      let storedUser = localStorage.getItem('cardArr')
+let Users = storedUser ? JSON.parse(storedUser) : [];
+let UpdatedUsersJSON = JSON.stringify(Users);
+localStorage.setItem('cardArr', UpdatedUsersJSON);
+      for(let i = 0;i < cardArr.length; i++){
+        if(cardArr != null){
+
+          card1.style.display = 'none'
+          if(cardARr[0]){
+            const subicon = document.querySelector('.subicon');
+            subIndex++;
+            subicon.innerHTML = + subIndex;
+console.log(subicon.innerHTML)
+          }
+        }
+        else{
+          hone.style.color = 'red'
+          hone.innerHTML = `You have not registered yet`
+        }
+      }
+  
+  const read = document.querySelector('#Read');
+  read.addEventListener('click',function(event){
+      event.preventDefault();
+    subIndex--;
+    const subicon = document.querySelector('.subicon');
+    subicon.innerHTML = + subIndex;
+    localStorage.removeItem('username');
+    card1.style.display = 'none'
+    Users.forEach(user => {
+      if (user.username) {
+          delete user.username;
+      }
+  });
+  localStorage.setItem('users', JSON.stringify(Users));
+    
+  })
 }
