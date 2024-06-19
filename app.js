@@ -22,11 +22,12 @@ form.addEventListener('submit', function(event) {
     // Create the card container
     const card = document.createElement('div');
     card.classList.add('card', 'd-flex', 'justify-content-center');
-    card.style.width = '22rem';
+    card.style.width = '18rem';
     card.style.border = '1px solid #000';
-    card.style.borderRadius = '50px';
+    card.style.borderRadius = '10px';
     card.style.boxShadow = '3px 3px 3px rgba(0, 0, 0, 0.5)';
-
+    
+    let arrAY = [];
     // Set the inner HTML of the card directly
     
     card.innerHTML = `
@@ -97,48 +98,23 @@ form.addEventListener('submit', function(event) {
       `;
     
     let abc = [];
-    const userCity = [`${res.data.current.temp_c}`];
+    const userCity = `${res.data.location.name}`;
     abc.push(userCity);
     console.log(abc)
-localStorage.setItem('CARD',JSON.stringify(card.innerHTML));
- const Local = localStorage.getItem('CARD');
- const NewLocal = JSON.parse(Local);
- console.log(NewLocal)
- const aginlocal = localStorage.getItem('CARD');
- const aginnewLocal = JSON.parse(againlocal);
- console.log(aginnewLocal);
+    localStorage.setItem('abc',JSON.stringify(abc))
+    let abctwo = [];
+    const userTemp = `${res.data.current.temp_c}°C`;
+    abctwo.push(userTemp);
+    localStorage.setItem('abctwo',JSON.stringify(abctwo));
 
 
-        // Function to create and render a card
-        function renderCard(cardData) {
-            // Create card elements
-            const card = document.createElement('div');
-            card.className = 'card';
+    arrAY.push(card.innerHTML)
+localStorage.setItem('CARD',JSON.stringify(arrAY));
 
-            const cardTitle = document.createElement('div');
-            cardTitle.className = 'card-title';
-            cardTitle.textContent = cardData.title;  // Assuming cardData has a 'title' property
+ 
 
-            const cardContent = document.createElement('div');
-            cardContent.className = 'card-content';
-            cardContent.textContent = cardData.content;  // Assuming cardData has a 'content' property
 
-            // Append card elements to card container
-            card.appendChild(cardTitle);
-            card.appendChild(cardContent);
 
-            // Append card to card-container
-            document.getElementById('card-container').appendChild(card);
-        }
-
-        // Call the renderCard function with newLocal data
-        if (NewLocal) {
-            renderCard(NewLocal);
-        } else {
-            console.log('No card data found in localStorage.');
-        } 
-        
-      
    city.value = ''   
     // Append the card to the cards container
     cardsContainer.appendChild(card);
@@ -287,11 +263,16 @@ function toUnicodeVariant(str, variant, flags) {
   }
   return result
 }
+
 let userData = localStorage.getItem('users');
 console.log(userData);
 let userdataJsonparse = JSON.parse(userData);
+console.log(userdataJsonparse)
 const hone = document.querySelector('h1');
+
 console.log(userdataJsonparse[0].username);
+const Nlocal = userdataJsonparse[0].username;
+const nLocal = localStorage.setItem('Nlocal',JSON.stringify(Nlocal))
 const card1 = document.querySelector('.cCard');
 let cardArr = [];
 let subIndex = 0;
@@ -313,6 +294,7 @@ let subIndex = 0;
 let Users = storedUser ? JSON.parse(storedUser) : [];
 let UpdatedUsersJSON = JSON.stringify(Users);
 localStorage.setItem('cardArr', UpdatedUsersJSON);
+console.log(UpdatedUsersJSON)
       for(let i = 0;i < cardArr.length; i++){
         if(cardArr != null){
 
@@ -321,7 +303,7 @@ localStorage.setItem('cardArr', UpdatedUsersJSON);
             const subicon = document.querySelector('.subicon');
             subIndex++;
             subicon.innerHTML = + subIndex;
-console.log(subicon.innerHTML)
+            console.log(subicon.innerHTML)
           }
         }
         else{
@@ -332,19 +314,21 @@ console.log(subicon.innerHTML)
   
   const read = document.querySelector('#Read');
   read.addEventListener('click',function(event){
-      event.preventDefault();
-    subIndex--;
+    event.preventDefault();
+    let storedUsers = localStorage.getItem('users');
+    let users = storedUsers ? JSON.parse(storedUsers) : [];
+      subIndex--;
+      localStorage.removeItem('username');
+      card1.style.display = 'none'
+      Users.forEach(user => {
+        if (user.username) {
+            delete user.username;
+        }
+    });
+    localStorage.setItem('users', JSON.stringify(Users));
     const subicon = document.querySelector('.subicon');
     subicon.innerHTML = + subIndex;
-    localStorage.removeItem('username');
-    card1.style.display = 'none'
-    Users.forEach(user => {
-      if (user.username) {
-          delete user.username;
-      }
-  });
-  localStorage.setItem('users', JSON.stringify(Users));
-    
+    // console.log()
   })
 }
 
@@ -399,14 +383,8 @@ console.log(subicon.innerHTML)
     subIndex--;
     const subicon = document.querySelector('.subicon');
     subicon.innerHTML = + subIndex;
-    localStorage.removeItem('username');
     card1.style.display = 'none'
-    Users.forEach(user => {
-      if (user.username) {
-          delete user.username;
-      }
   });
-  localStorage.setItem('users', JSON.stringify(Users));
     
-  })
+  
 }

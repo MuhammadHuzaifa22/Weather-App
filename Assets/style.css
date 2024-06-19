@@ -79,24 +79,24 @@ body{
     justify-content: center;
     width: 35px;
     height: 35px;
-    border-radius: 50px;
+    border-radius: 10px;
     background-color: rgb(255, 95, 95);
     cursor: pointer;
-    border: 1px solid rgb(255, 201, 201);
+    border: 1px solid black;
     transition-duration: 0.3s;
     margin-top: 3%;
     margin-left: 85%;
   }
   .bin-bottom {
-    width: 11px;
+    width: 8px;
 }
   .bin-top {
-    width: 11px;
+    width: 8px;
     transform-origin: right;
     transition-duration: 0.3s;
   }
   .delete-button:hover .bin-top {
-    transform: rotate(75deg);
+    transform: rotate(55deg);
   }
   .delete-button:hover {
     background-color: rgb(255, 0, 0);
@@ -175,8 +175,8 @@ form label{
 .more-info-button{
     font-size: 13px;
     font-weight: lighter;
-    border-radius: 50px;
-    width: 300px;
+    border-radius: 10px;
+    width: auto;
     margin: auto;
     font-family:'Times New Roman', Times, serif;
     color: black;
@@ -235,14 +235,13 @@ nav {
 	border-radius: 6px;
     margin-top: 1%;
 	background-image: linear-gradient(
-blue,
-		rgb(30, 30, 30) 40%,
-		#ffffff 86%
+rgb(0, 0, 255),
+		rgb(0, 47, 255) 40%,
+		#2f00ff 86%
 	);
 	color: rgba(255, 255, 255, 0.6);
-	text-shadow: 0 -2px 0 black;
 	cursor: pointer;
-	box-shadow: 1px 2px 4px rgb(20, 20, 20), 0 4px 12px rgb(10, 10, 10);
+	/* box-shadow: 1px 2px 4px rgb(20, 20, 20), 0 4px 12px rgb(10, 10, 10); */
 }
 
 .nav-item {
@@ -260,7 +259,7 @@ text-decoration: none;
 color: white;
 }
 .nav-item a:hover{
-    color: aqua;
+    color:black;
     }
 	&.active {
 		text-shadow: 0 0 3px hsla(260, 100%, 70%, 0.7);
@@ -505,3 +504,53 @@ button {
       right: 1rem;
     }
   }
+
+
+  /* ////////////////////////////////////////////////////////////////
+   */
+
+  .delE{
+    padding: 9%;
+    border-radius: 10px;
+    background-image: url('./Images/beautiful-blue-sky_23-2147609755.avif');
+    background-size: cover;
+    margin-top: 5%;
+  }
+ 
+
+  .caRd {
+    border: 1px solid #ccc;
+    padding: 16px;
+    margin: 16px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.caRd-title {
+    font-size: 1.5em;
+    margin-bottom: 8px;
+}
+.caRd-content {
+    font-size: 1em;
+    color: #555;
+}
+
+.cado{
+  padding: 2%;
+  border: 1px solid white;
+  margin-top: 1%;
+}
+#card-container{
+  margin-top: 1%;
+  padding: 1%;
+}
+.cardp{
+  padding: 5%;
+  margin-top: 5%;
+  color: black;
+  border: 1px solid white;
+  border-radius: 10px;
+  width:18rem;
+  background-image: url('./Images/beautiful-blue-sky_23-2147609755.avif');
+    background-size: cover;
+text-align: center;
+}

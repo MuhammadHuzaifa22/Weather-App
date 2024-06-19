@@ -47,14 +47,6 @@ console.log(subicon.innerHTML)
     subIndex--;
     const subicon = document.querySelector('.subicon');
     subicon.innerHTML = + subIndex;
-    localStorage.removeItem('username');
     card1.style.display = 'none'
-    Users.forEach(user => {
-      if (user.username) {
-          delete user.username;
-      }
-  });
-  localStorage.setItem('users', JSON.stringify(Users));
-    
   })
 }
