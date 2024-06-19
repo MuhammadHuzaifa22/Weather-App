@@ -96,10 +96,48 @@ form.addEventListener('submit', function(event) {
       </div>
       `;
     
+    let abc = [];
+    const userCity = [`${res.data.current.temp_c}`];
+    abc.push(userCity);
+    console.log(abc)
+localStorage.setItem('CARD',JSON.stringify(card.innerHTML));
+ const Local = localStorage.getItem('CARD');
+ const NewLocal = JSON.parse(Local);
+ console.log(NewLocal)
+ const aginlocal = localStorage.getItem('CARD');
+ const aginnewLocal = JSON.parse(againlocal);
+ console.log(aginnewLocal);
 
-    
-    
-    
+
+        // Function to create and render a card
+        function renderCard(cardData) {
+            // Create card elements
+            const card = document.createElement('div');
+            card.className = 'card';
+
+            const cardTitle = document.createElement('div');
+            cardTitle.className = 'card-title';
+            cardTitle.textContent = cardData.title;  // Assuming cardData has a 'title' property
+
+            const cardContent = document.createElement('div');
+            cardContent.className = 'card-content';
+            cardContent.textContent = cardData.content;  // Assuming cardData has a 'content' property
+
+            // Append card elements to card container
+            card.appendChild(cardTitle);
+            card.appendChild(cardContent);
+
+            // Append card to card-container
+            document.getElementById('card-container').appendChild(card);
+        }
+
+        // Call the renderCard function with newLocal data
+        if (NewLocal) {
+            renderCard(NewLocal);
+        } else {
+            console.log('No card data found in localStorage.');
+        } 
+        
       
    city.value = ''   
     // Append the card to the cards container
@@ -117,10 +155,15 @@ form.addEventListener('submit', function(event) {
         moreInfoButton.innerHTML = 'Show More <i class="fa-solid fa-angle-down" ></i>';
       }
     });
+    let del = 0;
+    let Arrray = [];
     const deleteButton = card.querySelector('.delete-button');
     deleteButton.addEventListener('click', function() {
       card.remove();
       alert("Deleted Successfully"+toUnicodeVariant('\nData Saved in History', 'bold sans', 'bold'));
+      del++
+      
+      
     });
   })
   .catch((err) => {
