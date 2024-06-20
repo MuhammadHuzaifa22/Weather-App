@@ -101,27 +101,50 @@ form.addEventListener('submit', function(event) {
     const userCity = `${res.data.location.name}`;
     abc.push(userCity);
     console.log(abc)
-    localStorage.setItem('abc',JSON.stringify(abc))
+    if(abc != null){
+
+      localStorage.setItem('abc',JSON.stringify(abc))
+    }
     let abctwo = [];
     const userTemp = `${res.data.current.temp_c}°C`;
     abctwo.push(userTemp);
-    localStorage.setItem('abctwo',JSON.stringify(abctwo));
+    if(abctwo != null){
 
+      localStorage.setItem('abctwo',JSON.stringify(abctwo));
+    }
+let abcthree = [];
+const now = new Date();
+let abcfour = [];
+// Get local date
+const localDate = now.toLocaleDateString();
+console.log(localDate); // This prints the current date in your local format
+abcthree.push(localDate)
+if(abcthree != null){
+  localStorage.setItem('abcthree',JSON.stringify(abcthree))
 
+}
+// Get local time
+const localTime = now.toLocaleTimeString();
+console.log(localTime); 
+abcfour.push(localTime)
+if(abcfour != null){
+  
+}
+localStorage.setItem('abcfour',JSON.stringify(abcfour))
     arrAY.push(card.innerHTML)
-localStorage.setItem('CARD',JSON.stringify(arrAY));
+    localStorage.setItem('CARD',JSON.stringify(arrAY));
 
  
 
 
 
-   city.value = ''   
-    // Append the card to the cards container
-    cardsContainer.appendChild(card);
-    // Attach event listener to the "More Info" button
-    const moreInfoButton = card.querySelector('.more-info-button');
-    const moreInfoContainer = card.querySelector('.more-info-container');
-    moreInfoButton.addEventListener('click', function() {
+      city.value = ''   
+      // Append the card to the cards container
+      cardsContainer.appendChild(card);
+      // Attach event listener to the "More Info" button
+      const moreInfoButton = card.querySelector('.more-info-button');
+      const moreInfoContainer = card.querySelector('.more-info-container');
+      moreInfoButton.addEventListener('click', function() {
       if (moreInfoContainer.style.display === 'none') {
         moreInfoContainer.style.display = 'block';
         moreInfoButton.innerHTML = 'Show Less <i class="fa-solid fa-angle-up" ></i>';
@@ -318,14 +341,14 @@ console.log(UpdatedUsersJSON)
     let storedUsers = localStorage.getItem('users');
     let users = storedUsers ? JSON.parse(storedUsers) : [];
       subIndex--;
-      localStorage.removeItem('username');
+      // localStorage.removeItem('username');
       card1.style.display = 'none'
-      Users.forEach(user => {
-        if (user.username) {
-            delete user.username;
-        }
-    });
-    localStorage.setItem('users', JSON.stringify(Users));
+    //   Users.forEach(user => {
+    //     if (user.username) {
+    //         delete user.username;
+    //     }
+    // });
+    // localStorage.setItem('users', JSON.stringify(Users));
     const subicon = document.querySelector('.subicon');
     subicon.innerHTML = + subIndex;
     // console.log()

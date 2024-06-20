@@ -47,14 +47,14 @@ console.log(subicon.innerHTML)
     subIndex--;
     const subicon = document.querySelector('.subicon');
     subicon.innerHTML = + subIndex;
-    localStorage.removeItem('username');
+    // localStorage.removeItem('username');
     card1.style.display = 'none'
-    Users.forEach(user => {
-      if (user.username) {
-          delete user.username;
-      }
-  });
-  localStorage.setItem('users', JSON.stringify(Users));
+  //   Users.forEach(user => {
+  //     if (user.username) {
+  //         delete user.username;
+  //     }
+  // });
+  // localStorage.setItem('users', JSON.stringify(Users));
 
 
 
@@ -64,3 +64,46 @@ console.log(subicon.innerHTML)
 
   localStorage.setItem('Ajeeb',JSON.stringify())
 }
+
+
+
+var deleteIndex = Number(localStorage.getItem('deleteIndex'));
+console.log(deleteIndex)
+  // deleteIndex = 0 
+// console.log(deleteCount)
+console.log(deleteIndex)
+
+let subINdex = 0;
+function deleteItem() {
+    // Increment the delete count
+    if(deleteIndex > 0){
+
+      deleteIndex =  deleteIndex + 1;
+      console.log(deleteIndex)
+      
+      subINdex++;
+    const subicon = document.querySelector('.subicon');
+
+    subicon.innerHTML = + subINdex;
+    
+    // Update the notification message
+    const notification = document.getElementById('notification');
+    notification.textContent = `You deleted ${deleteIndex} item${deleteIndex > 1 ? 's' : ''}`;
+  }
+    let currentDate = new Date();
+
+// Get the current time components
+let hours = currentDate.getHours();
+let minutes = currentDate.getMinutes();
+let seconds = currentDate.getSeconds();
+
+// Format the time as a string
+let currentTime = hours + ':' + minutes + ':' + seconds;
+
+// Display the current time
+console.log('Current Time: ' + currentTime);
+const not = document.querySelector('.not');
+not.innerHTML = `Time: ${currentTime}`;
+not.style.color = 'blue'
+}
+deleteItem()
