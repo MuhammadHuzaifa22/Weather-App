@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wheater App | History Page</title>
-    <!-- Links Css -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wheater App | Home Page</title>
+  <!-- Links Css -->
   <link rel="stylesheet" href="./Assets/style.css">
   <!-- Link Bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
@@ -12,9 +12,7 @@
   <!-- Font Awesome Link-->
   <script src="https://kit.fontawesome.com/0ae0890014.js" crossorigin="anonymous"></script>
 </head>
-<body>
-    
-    
+	
 <!-- Navbar Section Started -->
 <nav class="menu" id="nav">
 	<span class="nav-item active">
@@ -49,20 +47,32 @@
 	</span>
 </nav>
 <!-- Navbar Section Ended -->
+<div class="divIm" style="display: flex;flex-direction: row;justify-content: center;">
+	<img src="./Assets/Images/ee.jpg" alt="" style="width: 50vw;height: 40vh;border-radius: 10px;margin-top: 20px;">
+</div>
 
-
-<div class="cCard" style="display: none;">
-  </div>
-<h3 style="text-align: center;font-weight: lighter;margin-top: 1%;margin-bottom: -2%;">Searched History <i class="fa-solid fa-clock-rotate-left"></i></h3>
-  <div id="card-container"></div>
-  <div id="city-name" style="color: white;"></div>
+<h6 style="color:black;font-weight: lighter;text-align: center;font-family: monospace;margin-top: 1%;">Note: If you want to save your history search for one city <br>and then fast go to searched history page<br> otherwise history will not save.</h6>
+<hr>
+<form>
+	<div class="form">
+		  <input type="text" autocomplete="off" name="text" class="input" placeholder="Enter Your City" id="city">
+		</div>
+		<div class="form-but">
+			<button class="btn" type="submit">Search</button>
+    </div>
+  </form>
   
-
-
-
-  <span style="margin-right: 5px;text-align: end;display: none;" id="top">Go To Top</span>
+    <div id="cards-container">
+	</div>
+    <h3 style="color: white;"></h3>
+	<div id="card-container"></div>
+	
+	
+	
+	<!-- Top Button -->
+	<span style="margin-right: 5px;text-align: end;display: none;" id="top">Go To Top</span>
 	<div class="goto">
-	<a id="scroll-up" class="scroll-up Aa" href="#nav" style="max-lines: 5px;display: none;">
+		<a id="scroll-up" class="scroll-up Aa" href="#nav" style="max-lines: 5px;display: none;">
 		
 		<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M0 0h24v24H0z" fill="none"></path>
@@ -70,20 +80,22 @@
 			</path>
 		</svg>
 	</a>
-    </div>
-
-
+</div>
 
 	
-<!-- Link Bootstrap -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+	
+<div class="cCard" style="display: none;">
+</div>
+	
+	
+	
+  <!-- Link Bootstrap -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
     <!-- Axios Cdn -->
 <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
 
 <!-- JavaScript Link -->
-<script src="history.js"></script>
-
-
+  <script src="app.js"></script>
 </body>
 </html>

@@ -14,7 +14,7 @@ console.log(email)
     let user = users.find(user => user.email === email && user.password === password);
     if (user) {
         alert('Login ' + toUnicodeVariant('Successful', 'bold sans', 'bold'));
-        window.location = 'index.html';
+        window.location = 'new.html';
     } 
     else {
         alert('Invalid ' + toUnicodeVariant('email or password', 'bold sans', 'bold'));
