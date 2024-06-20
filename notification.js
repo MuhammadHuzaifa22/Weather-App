@@ -7,7 +7,7 @@ const card1 = document.querySelector('.cCard');
 let cardArr = [];
 let subIndex = 0;
     if(userdataJsonparse[0].username != null){
-      card1.innerHTML = `Hi ${userdataJsonparse[0].username}! thank you for registering  my website <div class="centralize">
+      card1.innerHTML = `Hi ${userdataJsonparse[0].username},thank you for registering  my website <div class="centralize">
       <div>
       <button id="Read">
         <span>Read</span>
@@ -49,12 +49,7 @@ console.log(subicon.innerHTML)
     subicon.innerHTML = + subIndex;
     // localStorage.removeItem('username');
     card1.style.display = 'none'
-  //   Users.forEach(user => {
-  //     if (user.username) {
-  //         delete user.username;
-  //     }
-  // });
-  // localStorage.setItem('users', JSON.stringify(Users));
+  
 
 
 

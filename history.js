@@ -35,6 +35,10 @@ function addNewCard(City, Temperature,Searched,Searched2) {
           console.log(existingCards)
           console.log(existingCards[0])
           console.log(existingCards[0].City)
+          const top = document.querySelector('#top');
+          const scroll = document.getElementById('scroll-up');
+          top.style.display = 'block';
+    scroll.style.display = 'block';
         }
         localStorage.setItem('existingCards', JSON.stringify(existingCards));
       // Store updated existingCards back to localStorage
@@ -82,6 +86,8 @@ function renderCards(cards) {
             `;
           });
           
+    //       top.style.display = 'block';
+    // scroll.style.display = 'block';
           // Append the generated HTML to card-container
           cardContainer.innerHTML = cardHTML;
           console.log(cardHTML);
@@ -89,7 +95,7 @@ function renderCards(cards) {
         }
             else {
               // Display message if no cards are found
-              cardContainer.innerHTML = `<h2 style="color:white">No card found...</h2>`;
+              cardContainer.innerHTML = `<h2 style="color:black">No card found...</h2>`;
             }
             
         }
@@ -99,8 +105,7 @@ window.onload = function() {
   renderCards(existingCards);
 };
 
-// Example usage: add a new card with abC and abCtwo
-// You would typically call this function based on user action (e.g., button click)
+
 
 
 

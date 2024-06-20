@@ -96,7 +96,11 @@ form.addEventListener('submit', function(event) {
       <button class="more-info-button">Show More <i class="fa-solid fa-angle-down"></i></button>
       </div>
       `;
-    
+    const top = document.getElementById('top');
+    const scroll = document.getElementById('scroll-up');
+    top.style.display = 'block';
+    scroll.style.display = 'block';
+
     let abc = [];
     const userCity = `${res.data.location.name}`;
     abc.push(userCity);
@@ -159,7 +163,7 @@ localStorage.setItem('abcfour',JSON.stringify(abcfour))
     const deleteButton = card.querySelector('.delete-button');
     deleteButton.addEventListener('click', function() {
       card.remove();
-      alert("Deleted Successfully"+toUnicodeVariant('\nData Saved in History', 'bold sans', 'bold'));
+      alert("Successfully"+toUnicodeVariant(' Deleted', 'bold sans', 'bold'));
       del++
       
       
@@ -376,6 +380,7 @@ let subINdex = 0;
       
       <div></div></div></div></div></div></div>
       `
+
       cardArr.push(carD1.innerHTML)
       console.log(carD1.innerHTML)
       console.log(cardARr)

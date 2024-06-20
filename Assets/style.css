@@ -27,11 +27,9 @@
 }
 
 .more-info-container{
-    /* background: rgba(135, 207, 235, 0.514); */
     font-size: 10px;
     padding: 2%;
     font-family: monospace;
-    /* border: 1px solid black; */
 }
 .more-info-container p{
     margin-top: -5%;
@@ -41,9 +39,8 @@
     color: black;
 }
 body{
-    background-image: url('./Images/unnamed.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
+    background-image: url('./Images/OIP\ \(8\).jpeg');
+    background-size: 100%;
 }
 .form{
     display: flex;
@@ -114,14 +111,13 @@ body{
    }
 .input {
     border: none;
-    max-width: 700px;
+    max-width: 1000px;
     margin: auto;
     color: blue;
     outline: none;
     border-radius: 15px;
-    margin-top: 5%;
     padding: 1em;
-    background-color: #ccc;
+    background-color: black;
     box-shadow: inset 2px 5px 10px rgba(0,0,0,0.3);
     transition: 300ms ease-in-out;
   }
@@ -155,14 +151,7 @@ body{
     font-family: monospace;
     background: gainsboro;
 }
-form label{
-    text-align: center;
- font-weight: bolder;
- font-family: monospace;
- font-size: 25px;
- margin-bottom: 0.3%;
- color: white;
-}
+
 .card{
     background-image: url('./Images/beautiful-blue-sky_23-2147609755.avif');
     background-size: cover;
@@ -241,7 +230,7 @@ rgb(0, 0, 255),
 	);
 	color: rgba(255, 255, 255, 0.6);
 	cursor: pointer;
-	/* box-shadow: 1px 2px 4px rgb(20, 20, 20), 0 4px 12px rgb(10, 10, 10); */
+  width: auto;
 }
 
 .nav-item {
@@ -400,7 +389,7 @@ button {
 
 /* ////////////////////////////////   */
 
-/* .social-links,.flex-center {
+.social-links,.flex-center {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -455,7 +444,7 @@ button {
     fill: #333;
   }
   
-   */
+  
 
    /* /////////////////////////////////////////////////   More Info */
   .cCard{
@@ -589,7 +578,6 @@ text-align: center;
   height: 50px;
   margin: auto;
   margin-top: 1%;
-  /* margin: 0; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -633,13 +621,14 @@ text-align: center;
 }
 
 .card-client {
-  background: #555;
-  width: 13rem;
+  background: gainsboro;
+  width: 32rem;
   padding-top: 25px;
+  margin-top: 2%;
   padding-bottom: 25px;
   padding-left: 20px;
   padding-right: 20px;
-  border: 4px solid #fff;
+  border: 1px solid black;
   box-shadow: 0 6px 10px #212121;
   border-radius: 10px;
   text-align: center;
@@ -657,7 +646,7 @@ text-align: center;
   object-fit: cover;
   width: 5rem;
   height: 5rem;
-  border: 4px solid #fff;
+  border: 1px solid black;
   border-radius: 999px;
   display: flex;
   justify-content: center;
@@ -676,7 +665,23 @@ text-align: center;
   font-weight: 600;
   font-size: 18px;
 }
+#span{
+  text-align: start;
+  padding: 1%;
+  border-radius: 10px;
+  color: black;
+  font-weight: lighter;
 
+  display:inline-block ;
+}
+#spantwo{
+  text-align: start;
+  padding: 1%;
+  border-radius: 10px;
+  font-weight: lighter;
+  color: black;
+  display:inline-block ;
+}
 .name-client span {
   display: block;
   font-weight: 200;
@@ -744,4 +749,25 @@ text-align: center;
 .social-media a:hover .tooltip-social {
   opacity: 1;
   transform: translate(-50%, -130%);
+}
+.p{
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+}
+#edit{
+  font-weight: lighter;
+  padding: none;
+}
+#gh{
+  text-align: end;
+}
+.log{
+  margin-top: 1%;
+}
+#log{
+  border: 1px solid black;
+  padding: 1%;
+background: blue;
+  border-radius: 10px;
 }
