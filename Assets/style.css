@@ -111,7 +111,6 @@ body{
    }
 .input {
     border: none;
-    max-width: 1000px;
     margin: auto;
     color: blue;
     outline: none;
@@ -124,7 +123,7 @@ body{
   
   .input:focus {
     background-color: white;
-    transform: scale(1.05);
+    /* transform: scale(1.05); */
     box-shadow: 13px 13px 100px #969696,
                -13px -13px 100px #ffffff;
   }
@@ -230,12 +229,12 @@ rgb(0, 0, 255),
 	);
 	color: rgba(255, 255, 255, 0.6);
 	cursor: pointer;
-  width: auto;
 }
 
 .nav-item {
 	flex-direction: row-reverse;
-	font-size: 0.8999rem;
+	font-size:19px;
+  font-weight: bolder;
 	line-height: 1rem;
 	align-items: center;
 	min-width: 120px;
@@ -293,10 +292,10 @@ color: white;
 			background: red;
 			color: white;
 			box-shadow: 0 0 4px rgba(41, 41, 41, 0.405);
-			width: 18px;
-			height: 18px;
-			border-radius: 14px;
-			font-size: 0.7em;
+			width: 20px;
+			height: 20px;
+			border-radius: 10px;
+			font-size: 24px;
 			font-weight: 700;
 			display: inline-grid;
 			place-items: center;
@@ -305,13 +304,16 @@ color: white;
 	}
 
 	.icon > svg {
-		max-width: 16px;
+		max-width: 20px;
 	}
 
 
 .hr{
     display: flex;
     flex-direction: row;
+}
+#city{
+  width: 50vw;
 }
 
 button {
@@ -543,7 +545,7 @@ button {
   color: black;
   border: 1px solid white;
   border-radius: 10px;
-  width:18rem;
+  width:50vw;
   background-image: url('./Images/beautiful-blue-sky_23-2147609755.avif');
     background-size: cover;
 text-align: center;
@@ -551,6 +553,9 @@ text-align: center;
 .Yt{
   font-size: 25px;
   font-weight: bolder;
+}
+.card-content{
+  text-align: center;
 }
 .Yh{
   font-weight: bolder;
@@ -560,13 +565,16 @@ text-align: center;
   padding: 1%;
   color: white;
   border: none;
+  font-size: 25px;
   font-weight: lighter;
   border-radius: 10px;
+  text-align: center;
 }
 .Yp{
   margin-top: 2%;
   display: flex;
   flex-direction: row;
+  justify-content: center;
 }
 
 /* /////////////////////////////////////////////////////////////////////// */
@@ -622,7 +630,7 @@ text-align: center;
 
 .card-client {
   background: gainsboro;
-  width: 32rem;
+  width:50vw;
   padding-top: 25px;
   margin-top: 2%;
   padding-bottom: 25px;
@@ -770,4 +778,8 @@ text-align: center;
   padding: 1%;
 background: blue;
   border-radius: 10px;
+}
+.hsix{
+  width:50vw;
+  
 }

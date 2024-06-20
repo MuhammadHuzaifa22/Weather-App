@@ -14,7 +14,7 @@ form.addEventListener('submit', function(event) {
 
   
   axios(
-    `http://api.weatherapi.com/v1/current.json?key=dae9933c87e147abadb51806241406&q=${city.value}&aqi=no`
+    `https://api.weatherapi.com/v1/current.json?key=dae9933c87e147abadb51806241406&q=${city.value}&aqi=no`
   )
   .then((res) => {
     console.log(res.data);
@@ -52,7 +52,7 @@ form.addEventListener('submit', function(event) {
     class="bin-bottom"
     viewBox="0 0 33 39"
     fill="none"
-    xmlns="http://www.w3.org/2000/svg"
+    xmlns="https://www.w3.org/2000/svg"
   >
   <mask id="path-1-inside-1_8_19" fill="white">
   <path

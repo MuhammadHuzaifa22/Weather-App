@@ -75,7 +75,7 @@ function renderCards(cards) {
             <div class="card-title Yt">City: ${card.City || 'No card'}</div>
             <div class="card-content Yh">Temperature: ${card.Temperature || 'No card'}</div>
             <div class="Yp">
-            <div class="card-content Yu">You searched this at ${card.Searched || 'No card'} on ${card.Searched2 || 'No card'}</div>
+            <div class="Yu">You searched this at ${card.Searched || 'No card'} on ${card.Searched2 || 'No card'}</div>
             </div>
             <div class="del">
     <div onclick="deleteCard(${index})">

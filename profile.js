@@ -71,24 +71,40 @@ span.innerHTML=`Name: ${updatedVal} <div onclick="edit()" id="gh"><span id="edit
   ed.innerHTML ='Edited'
   ed.style.color = 'blue'
 }
+console.log(username[0].password)
 function logg(){
   const log = prompt('Enter your registered email here')
   const enterPass = prompt('Enter your password here')
   console.log(log)
-  if(log === username[0].email && enterPass === username[0].password){
-    const alertDelete = prompt("Type"+toUnicodeVariant(' DELETE', 'bold sans', 'bold'));
-    if(alertDelete === 'DELETE'){
-      
+  if(log !== null && enterPass !== null && log !== '' && enterPass !== '' ){
+
+    if(log === username[0].email && enterPass === username[0].password){
+      const alertDelete = prompt("Type"+toUnicodeVariant(' DELETE', 'bold sans', 'bold'));
+      if(alertDelete === 'DELETE'){
       console.log(alertDelete)
-      alert("Account"+toUnicodeVariant(' Deleted', 'bold sans', 'bold'));
-      window.location = 'register.html';
+      alert("Account"+toUnicodeVariant(' deleted', 'bold sans', 'bold'));
+      window.location = 'index.html';
+    }else{
+      const alertdelete = prompt("Please type"+toUnicodeVariant(' DELETE', 'bold sans', 'bold'));
+      if(alertdelete === 'DELETE'){
+        console.log(alertdelete)
+        alert("Account"+toUnicodeVariant(' deleted', 'bold sans', 'bold'));
+        window.location = 'index.html';
+      }else{
+      alert("Account did not"+toUnicodeVariant(' delete', 'bold sans', 'bold'));
+      
+      }
     }
   }else{
     alert("Invalid"+toUnicodeVariant(' email or password', 'bold sans', 'bold'));
 
   }
+}else{
+  alert("Please input"+toUnicodeVariant(' email and password', 'bold sans', 'bold'));
+
 }
 
+}
 
 
 
