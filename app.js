@@ -16,33 +16,35 @@ form.addEventListener('submit', function(event) {
   axios(
     `https://api.weatherapi.com/v1/current.json?key=dae9933c87e147abadb51806241406&q=${city.value}&aqi=no`
   )
+  
   .then((res) => {
     console.log(res.data);
     
     // Create the card container
-    const card = document.createElement('div');
+    let card = document.createElement('card')
     card.classList.add('card', 'd-flex', 'justify-content-center');
     card.style.width = '18rem';
     card.style.border = '1px solid #000';
     card.style.borderRadius = '10px';
     card.style.boxShadow = '3px 3px 3px rgba(0, 0, 0, 0.5)';
-    
+  card.style.textShadow = ' 2px 2px 4px white'
     let arrAY = [];
+
     // Set the inner HTML of the card directly
-    
     card.innerHTML = `
     <button class="delete-button">
     <svg
     class="bin-top"
     viewBox="0 0 39 7"
+    
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
     >
     <line y1="5" x2="39" y2="5" stroke="white" stroke-width="4"></line>
     <line
-      x1="12"
-      y1="1.5"
-      x2="26.0357"
+    x1="12"
+    y1="1.5"
+    x2="26.0357"
       y2="1.5"
       stroke="white"
       stroke-width="3"
@@ -53,9 +55,9 @@ form.addEventListener('submit', function(event) {
     viewBox="0 0 33 39"
     fill="none"
     xmlns="https://www.w3.org/2000/svg"
-  >
-  <mask id="path-1-inside-1_8_19" fill="white">
-  <path
+    >
+    <mask id="path-1-inside-1_8_19" fill="white">
+    <path
         d="M0 0H33V35C33 37.2091 31.2091 39 29 39H4C1.79086 39 0 37.2091 0 35V0Z"
       ></path>
       </mask>
@@ -68,12 +70,13 @@ form.addEventListener('submit', function(event) {
       <path d="M21 6V29" stroke="white" stroke-width="4"></path>
       </svg>
       </button>
-    <div class="FG">
-    <div class="card-body">
+      <div class="FG">
+      <div class="card-body">
         <h2 class="card-title">${res.data.location.name}</h2>
         <h6 class="card-subtitle mb-2 card-text" style="font-weight: lighter;">
           ${res.data.location.localtime}, ${res.data.location.country}
         </h6>
+        <h4>Country: ${res.data.location.country}</h4>
         <div class="cardFlex">
           <h3>${res.data.current.temp_c}°C</h3>
           <img width="160px" src="${res.data.current.condition.icon}">
@@ -96,8 +99,13 @@ form.addEventListener('submit', function(event) {
       <button class="more-info-button">Show More <i class="fa-solid fa-angle-down"></i></button>
       </div>
       `;
-    const top = document.getElementById('top');
-    const scroll = document.getElementById('scroll-up');
+      const now = new Date();
+      const localDate = now.toLocaleDateString();
+      const localTime = now.toLocaleTimeString();
+      localStorage.setItem('LocalTimeRes',JSON.stringify(localTime));
+    localStorage.setItem('LocalDateRes',JSON.stringify(localDate))
+      const top = document.getElementById('top');
+      const scroll = document.getElementById('scroll-up');
     top.style.display = 'block';
     scroll.style.display = 'block';
 
@@ -111,16 +119,15 @@ form.addEventListener('submit', function(event) {
     }
     let abctwo = [];
     const userTemp = `${res.data.current.temp_c}°C`;
+    console.log(localTime)
     abctwo.push(userTemp);
     if(abctwo != null){
 
       localStorage.setItem('abctwo',JSON.stringify(abctwo));
     }
 let abcthree = [];
-const now = new Date();
 let abcfour = [];
 // Get local date
-const localDate = now.toLocaleDateString();
 console.log(localDate); // This prints the current date in your local format
 abcthree.push(localDate)
 if(abcthree != null){
@@ -128,23 +135,23 @@ if(abcthree != null){
 
 }
 // Get local time
-const localTime = now.toLocaleTimeString();
-console.log(localTime); 
-abcfour.push(localTime)
-if(abcfour != null){
-  
-}
-localStorage.setItem('abcfour',JSON.stringify(abcfour))
-    arrAY.push(card.innerHTML)
-    localStorage.setItem('CARD',JSON.stringify(arrAY));
+// console.log(localTime); 
+// abcfour.push(localTime)
+
+// localStorage.setItem('abcfour',JSON.stringify(abcfour))
+//     arrAY.push(card.innerHTML)
+//     localStorage.setItem('CARD',JSON.stringify(arrAY));
 
  
 
 
 
       city.value = ''   
+
       // Append the card to the cards container
       cardsContainer.appendChild(card);
+
+
       // Attach event listener to the "More Info" button
       const moreInfoButton = card.querySelector('.more-info-button');
       const moreInfoContainer = card.querySelector('.more-info-container');
@@ -159,14 +166,17 @@ localStorage.setItem('abcfour',JSON.stringify(abcfour))
       }
     });
     let del = 0;
-    let Arrray = [];
     const deleteButton = card.querySelector('.delete-button');
     deleteButton.addEventListener('click', function() {
       card.remove();
-      alert("Successfully"+toUnicodeVariant(' Deleted', 'bold sans', 'bold'));
+      alert("Successfully"+toUnicodeVariant(' Deleted \n Data saved in history', 'bold sans', 'bold'));
       del++
-      
-      
+      localStorage.setItem('ResName',JSON.stringify(`${res.data.location.name}`));
+      localStorage.setItem('ResTemp',JSON.stringify(`${res.data.current.temp_c}`));
+      localStorage.setItem('ResLocalTime',JSON.stringify(`${res.data.location.localtime}`))
+      localStorage.setItem('ResCountry',JSON.stringify(`${res.data.location.country}`));
+      localStorage.setItem('ResIcon',JSON.stringify(`${res.data.current.condition.icon}`));
+      localStorage.setItem('ResCondition',JSON.stringify(`${res.data.current.condition.text}`))
     });
   })
   .catch((err) => {
@@ -175,7 +185,7 @@ localStorage.setItem('abcfour',JSON.stringify(abcfour))
 });
 
 
-
+// This is for alert styling
 function toUnicodeVariant(str, variant, flags) {
   const offsets = {
       m: [0x1d670, 0x1d7f6],
@@ -416,3 +426,95 @@ console.log(subicon.innerHTML)
     
   
 }
+
+
+const commoncard = document.querySelector('.commconcards');
+
+const London = axios(
+  `https://api.weatherapi.com/v1/current.json?key=dae9933c87e147abadb51806241406&q=London&aqi=no`
+)
+.then((rEsponse)=>{
+  console.log(rEsponse.data.location);
+  const Location = rEsponse.data.location;
+  const Current = rEsponse.data.current
+
+  commoncard.innerHTML = `
+    <div class="commonCard">
+      <h2 style="text-align:center"><b>${Location.name}</b></h2>
+      <h3 style="text-align:center"><b>${Current.temp_c}°C</b></h3>
+      <p style="text-align:center;">Country: ${Location.country}</p>
+      <p style="text-align:center">Local Time: ${Location.localtime}</p>
+    </div>
+  `;
+  })
+  .catch((error) => {
+    console.error('Error fetching weather data:', error);
+  });
+
+  const commoncardone = document.querySelector('.commconcardsone');
+ const Karachi = axios(
+  `https://api.weatherapi.com/v1/current.json?key=dae9933c87e147abadb51806241406&q=Karachi&aqi=no`
+)
+.then((response)=>{
+console.log(response.data.location);
+const location = response.data.location;
+const current = response.data.current;
+
+commoncardone.innerHTML = `
+  <div class="commonCard">
+    <h2 style="text-align:center"><b>${location.name}</b></h2>
+    <h3 style="text-align:center"><b>${current.temp_c}°C</b></h3>
+    <p style="text-align:center;">Country: ${location.country}</p>
+    <p style="text-align:center">Local Time: ${location.localtime}</p>
+  </div>
+`;
+})
+.catch((error) => {
+  console.error('Error fetching weather data:', error);
+});
+
+const commoncardtwo = document.querySelector('.commconcardstwo');
+ const NewDelhi = axios(
+  `https://api.weatherapi.com/v1/current.json?key=dae9933c87e147abadb51806241406&q=India&aqi=no`
+)
+.then((reSponse)=>{
+console.log(reSponse.data.location);
+const lOcation = reSponse.data.location;
+const cUrrent = reSponse.data.current;
+
+commoncardtwo.innerHTML = `
+  <div class="commonCard">
+  <h2 style="text-align:center"><b>${lOcation.name}</b></h2>
+  <h3 style="text-align:center"><b>${cUrrent.temp_c}°C</b></h3>
+    <p style="text-align:center;">Country: ${lOcation.country}</p>
+    <p style="text-align:center">Local Time: ${lOcation.localtime}</p>
+  </div>
+`;
+})
+.catch((error) => {
+  console.error('Error fetching weather data:', error);
+});
+
+const commoncardthree = document.querySelector('.commconcardsthree');
+const commoncardfour = document.querySelector('.commconcardsfour');
+
+ const Washington = axios(
+  `https://api.weatherapi.com/v1/current.json?key=dae9933c87e147abadb51806241406&q=United States of America&aqi=no`
+)
+.then((reSPonse)=>{
+console.log(reSPonse.data.location);
+const lOCation = reSPonse.data.location;
+const cURRent = reSPonse.data.current
+commoncardthree.innerHTML = `
+  <div class="commonCard">
+    <h2 style="text-align:center"><b>${lOCation.name}</b></h2>
+    <h3 style="text-align:center"><b>${cURRent.temp_c}°C</b></h3>
+    <p style="text-align:center;">Country: ${lOCation.country}</p>
+    <p style="text-align:center">Local Time: ${lOCation.localtime}</p>
+  </div>
+`;
+
+})
+.catch((error) => {
+  console.error('Error fetching weather data:', error);
+});

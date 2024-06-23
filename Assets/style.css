@@ -19,7 +19,7 @@
 
 
 .card{
-    margin: auto;
+  margin: auto;
     border-radius: 10px;
 }
 .card-body{
@@ -46,11 +46,11 @@ body{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    
+    margin-top: -5%;
 }
 .btn {
     width: 130px;
-    height: 40px;
+    height: 60px;
     font-size: 1.1em;
     cursor: pointer;
     background-color: #171717;
@@ -64,10 +64,10 @@ body{
    
    .btn:hover {
        border-radius: 5px;
-    transform: translateY(-10px);
-    box-shadow: 0 7px 0 -2px #f85959,
-     0 15px 0 -4px #39a2db,
-     0 16px 10px -3px #39a2db;
+       transform: translateY(-10px);
+       box-shadow: 0 7px 0 -2px #f85959,
+       0 15px 0 -4px #39a2db,
+       0 16px 10px -3px #39a2db;
    }
    .delete-button {
     display: flex;
@@ -79,10 +79,10 @@ body{
     border-radius: 10px;
     background-color: rgb(255, 95, 95);
     cursor: pointer;
-    border: 1px solid black;
+    border: 1px solid #ccc;
     transition-duration: 0.3s;
     margin-top: 3%;
-    margin-left: 85%;
+    margin-left: 82%;
   }
   .bin-bottom {
     width: 8px;
@@ -112,12 +112,18 @@ body{
 .input {
     border: none;
     margin: auto;
-    color: blue;
+    color: black;
     outline: none;
+    font-family: monospace;
+    font-weight: bolder;
     border-radius: 15px;
     padding: 1em;
-    background-color: black;
-    box-shadow: inset 2px 5px 10px rgba(0,0,0,0.3);
+    background-image: url('./Images/beautiful-blue-sky_23-2147609755.avif');
+    background-size: cover;
+    box-shadow: 4px 4px 6px 0 rgba(255,255,255,.5),
+    -4px -4px 6px 0 rgba(116, 125, 136, .5), 
+inset -4px -4px 6px 0 rgba(255,255,255,.2),
+inset 4px 4px 6px 0 rgba(0, 0, 0, .4);
     transition: 300ms ease-in-out;
   }
   
@@ -131,16 +137,19 @@ body{
     display: flex;
     flex-direction: row;
     justify-content: center;
-    margin-top: 1%;
 }
 .form-but button{
-    padding: 0.5%;
     border: 1px solid green;
-    font-size: 13px;
-    font-weight: lighter;
+    font-size: 17px;
+    font-weight: bolder;
     color: white;
     font-family: monospace;
-    background: rgba(0, 0, 255, 0.705);
+    background-image: url('./Images/beautiful-blue-sky_23-2147609755.avif');
+    background-size: cover;
+    box-shadow: 4px 4px 6px 0 rgba(255,255,255,.5),
+    -4px -4px 6px 0 rgba(116, 125, 136, .5), 
+inset -4px -4px 6px 0 rgba(255,255,255,.2),
+inset 4px 4px 6px 0 rgba(0, 0, 0, .4);
 }
 .form-but button:hover{
     padding: 0.5%;
@@ -152,13 +161,13 @@ body{
 }
 
 .card{
-    background-image: url('./Images/beautiful-blue-sky_23-2147609755.avif');
+  background-image: url('./Images/beautiful-blue-sky_23-2147609755.avif');
     background-size: cover;
-    margin-top: 5%;
 }
 .FG{
     display: flex;
     flex-direction:column;
+    justify-content: center;
 }
 .more-info-button{
     font-size: 13px;
@@ -187,7 +196,7 @@ body{
 .more-info-container h6{
     font-size: 14px;
     font-weight: bolder;
-padding: 1%;
+    padding: 1%;
 }
 
 .card-body h4{
@@ -221,23 +230,19 @@ nav,
 
 nav {
 	border-radius: 6px;
-    margin-top: 1%;
-	background-image: linear-gradient(
-rgb(0, 0, 255),
-		rgb(0, 47, 255) 40%,
-		#2f00ff 86%
-	);
+	background-image: url('./Images/beautiful-blue-sky_23-2147609755.avif');
+    background-size: cover;
 	color: rgba(255, 255, 255, 0.6);
 	cursor: pointer;
 }
 
 .nav-item {
 	flex-direction: row-reverse;
-	font-size:19px;
-  font-weight: bolder;
+	font-size:15px;
+  /* font-weight: bolder; */
 	line-height: 1rem;
 	align-items: center;
-	min-width: 120px;
+	min-width: 40px;
 	justify-content: space-between;
 	transition: all 80ms ease;
     
@@ -450,13 +455,31 @@ button {
 
    /* /////////////////////////////////////////////////   More Info */
   .cCard{
-    background: white;
     border-radius: 10px;
+    text-shadow: 2px 2px 4px white;
     padding: 1%;
+    width: 50vw;text-align: center;font-size: 25px;background-image: url('./Images/beautiful-blue-sky_23-2147609755.avif');
+background-size: cover;;box-shadow: 4px 4px 6px 0 rgba(255,255,255,.5),
+-4px -4px 6px 0 rgba(116, 125, 136, .5), 
+inset -4px -4px 6px 0 rgba(255,255,255,.2),
+inset 4px 4px 6px 0 rgba(0, 0, 0, .4);
   }
 
 
-
+#Read{
+  padding: 1%;
+  /* background-image: url('./Images/beautiful-blue-sky_23-2147609755.avif'); */
+/* background-size: cover; */
+box-shadow: 4px 4px 6px 0 rgba(255,255,255,.5),
+-4px -4px 6px 0 rgba(116, 125, 136, .5), 
+inset -4px -4px 6px 0 rgba(255,255,255,.2),
+inset 4px 4px 6px 0 rgba(0, 0, 0, .4);
+}
+#Read span{
+  color: black;
+  padding: 5px;
+  font-size: 18px;
+}
 
   /* /////////////////////////////////////// */
   .Aa{
@@ -531,8 +554,12 @@ button {
   border: 1px solid white;
   margin-top: 1%;
 }
-#card-container{
-  margin-top: 1%;
+
+#cards-container{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 10px;
   padding: 1%;
 }
 .cardp{
@@ -561,7 +588,7 @@ text-align: center;
   font-weight: bolder;
 }
 .Yu{
-  /* background: rgb(0, 0, 0); */
+
   padding: 1%;
   color: white;
   border: none;
@@ -629,7 +656,8 @@ text-align: center;
 }
 
 .card-client {
-  background: gainsboro;
+  background-image: url('./Images/beautiful-blue-sky_23-2147609755.avif');
+    background-size: cover;
   width:50vw;
   padding-top: 25px;
   margin-top: 2%;
@@ -679,8 +707,7 @@ text-align: center;
   border-radius: 10px;
   color: black;
   font-weight: lighter;
-
-  display:inline-block ;
+  /* display:inline-block ; */
 }
 #spantwo{
   text-align: start;
@@ -688,7 +715,7 @@ text-align: center;
   border-radius: 10px;
   font-weight: lighter;
   color: black;
-  display:inline-block ;
+  /* display:inline-block ; */
 }
 .name-client span {
   display: block;
@@ -762,6 +789,7 @@ text-align: center;
   margin-top: 20px;
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
 }
 #edit{
   font-weight: lighter;
@@ -774,12 +802,130 @@ text-align: center;
   margin-top: 1%;
 }
 #log{
-  border: 1px solid black;
+  border: 1px solid blue;
+  color:black;
   padding: 1%;
-background: blue;
+  text-shadow: 2px 2px 4px white;
+  box-shadow: 4px 4px 6px 0 rgba(255,255,255,.5),
+  -4px -4px 6px 0 rgba(116, 125, 136, .5), 
+inset -4px -4px 6px 0 rgba(255,255,255,.2),
+inset 4px 4px 6px 0 rgba(0, 0, 0, .4);
   border-radius: 10px;
+  background-image: url('./Images/beautiful-blue-sky_23-2147609755.avif');
+  background-size: cover;
+}
+#log:hover{
+background: blue;
+}
+.hsix h6{
+  color:black;font-weight: lighter;text-align: center;font-family: monospace;margin-top: 1%;font-size: 20px;background: white;padding: 1%;border-radius: 10px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 255, 0.404);
+  box-shadow: 4px 4px 6px 0 rgba(255,255,255,.5),
+              -4px -4px 6px 0 rgba(116, 125, 136, .5), 
+    inset -4px -4px 6px 0 rgba(255,255,255,.2),
+    inset 4px 4px 6px 0 rgba(0, 0, 0, .4);
+
 }
 .hsix{
-  width:50vw;
+  width:50vw; 
   
+}
+.divIm img{
+  width: 50vw;height: 25vh;border-radius: 10px;margin-top: 10px;
+  box-shadow: 4px 4px 6px 0 rgba(255,255,255,.5),
+              -4px -4px 6px 0 rgba(116, 125, 136, .5), 
+    inset -4px -4px 6px 0 rgba(255,255,255,.2),
+    inset 4px 4px 6px 0 rgba(0, 0, 0, .4);
+}
+@media(max-width:797px){
+  .hsix h6{
+    font-size: 10px;
+  } 
+  .divIm img{
+    width: 50vw;height: 20vh;border-radius: 10px;margin-top: 10px;
+  } 
+}
+
+.commonCard{
+  border: 1px solid black;
+  background-image: url('./Images/beautiful-blue-sky_23-2147609755.avif');
+    background-size: cover;
+  border-radius: 10px;
+  height:20vh;
+  font-family: monospace;
+  text-shadow: 2px 2px 4px white;
+  box-shadow: 4px 4px 6px 0 rgba(255,255,255,.5),
+  -4px -4px 6px 0 rgba(116, 125, 136, .5), 
+inset -4px -4px 6px 0 rgba(255,255,255,.2),
+inset 4px 4px 6px 0 rgba(0, 0, 0, .4); 
+  font-weight: bolder;
+}
+.CommonCountries{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 9px
+}
+.commonCard h3,p,p{
+margin-top: -7%;
+}
+.commonCard p{
+  margin-top: -13px;
+}
+.CArd{
+  background-image: url('./Images/beautiful-blue-sky_23-2147609755.avif');
+  background-size: cover; 
+  padding: 2%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
+  border: 1px solid black;
+  width: 20rem;
+  border-radius: 10px;
+  margin-top: 5%;
+  padding-top: 5px;
+  font-weight: bolder;
+  text-shadow: 2px 2px 4px white;
+  box-shadow: 4px 4px 6px 0 rgba(255,255,255,.5),
+  -4px -4px 6px 0 rgba(116, 125, 136, .5), 
+inset -4px -4px 6px 0 rgba(255,255,255,.2),
+inset 4px 4px 6px 0 rgba(0, 0, 0, .4); 
+}
+.CArd img{
+/* height: 20vh; */
+margin: auto;
+margin-top: -10px;
+}
+.resFor{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: auto;
+  margin-top: 4px;
+}
+.hhh{
+  padding: none;
+  background: white;
+  font-weight: lighter;
+  border-radius: 10px;
+  font-size: 19px;
+  text-shadow: 2px 2px 4px skyblue;
+
+  box-shadow: 4px 4px 6px 0 rgba(255,255,255,.5),
+  -4px -4px 6px 0 rgba(116, 125, 136, .5), 
+inset -4px -4px 6px 0 rgba(255,255,255,.2),
+inset 4px 4px 6px 0 rgba(0, 0, 0, .4); 
+}
+
+#deleteALl{
+  text-shadow: 2px 2px 4px skyblue;
+  box-shadow: 4px 4px 6px 0 rgba(255,255,255,.5),
+  -4px -4px 6px 0 rgba(116, 125, 136, .5), 
+inset -4px -4px 6px 0 rgba(255,255,255,.2),
+inset 4px 4px 6px 0 rgba(0, 0, 0, .4); 
+background-image: url('./Images/beautiful-blue-sky_23-2147609755.avif');
+  background-size: cover; 
 }

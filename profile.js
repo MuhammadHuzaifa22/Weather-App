@@ -55,6 +55,8 @@ console.log(subicon.innerHTML)
 const span = document.querySelector('#span');
 const spantwo = document.querySelector('#spantwo');
 
+
+
 const username =JSON.parse(localStorage.getItem('users'))
 console.log(username)
 // console.log(arr)

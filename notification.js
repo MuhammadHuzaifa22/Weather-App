@@ -24,8 +24,10 @@ let subIndex = 0;
 let Users = storedUser ? JSON.parse(storedUser) : [];
 let UpdatedUsersJSON = JSON.stringify(Users);
 localStorage.setItem('cardArr', UpdatedUsersJSON);
-      for(let i = 0;i < cardArr.length; i++){
-        if(cardArr != null){
+
+console.log(UpdatedUsersJSON)
+for(let i = 0;i < cardArr.length; i++){
+  if(cardArr != null){
 
           card1.style.display = 'block'
           if(cardArr[0]){
@@ -47,13 +49,7 @@ console.log(subicon.innerHTML)
     subIndex--;
     const subicon = document.querySelector('.subicon');
     subicon.innerHTML = + subIndex;
-    // localStorage.removeItem('username');
     card1.style.display = 'none'
-  
-
-
-
-    
   })
 
 
