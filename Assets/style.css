@@ -139,10 +139,12 @@ inset 4px 4px 6px 0 rgba(0, 0, 0, .4);
     justify-content: center;
 }
 .form-but button{
-    border: 1px solid green;
+    border: 1px solid blue;
     font-size: 17px;
+    border-radius: 10px;
     font-weight: bolder;
-    color: white;
+    color: black;
+    text-shadow: 2px 2px 4px white;
     font-family: monospace;
     background-image: url('./Images/beautiful-blue-sky_23-2147609755.avif');
     background-size: cover;
@@ -153,8 +155,10 @@ inset 4px 4px 6px 0 rgba(0, 0, 0, .4);
 }
 .form-but button:hover{
     padding: 0.5%;
+    border-radius: 10px;
+
     border: 1px solid blue;
-    font-size: 13px;
+    font-size: 17px;
     font-weight: lighter;
     font-family: monospace;
     background: gainsboro;
@@ -234,6 +238,7 @@ nav {
     background-size: cover;
 	color: rgba(255, 255, 255, 0.6);
 	cursor: pointer;
+  margin-top: 5px;
 }
 
 .nav-item {
@@ -263,9 +268,9 @@ color: white;
 	}
 
 	&:hover > .icon .subicon {
-		height: 32px;
-		width: 32px;
-		border-radius: 32px;
+		height: 22px;
+		width: 22px;
+		border-radius: 22px;
 		top: -16px;
 		right: -16px;
 		border-color: white;
@@ -300,7 +305,7 @@ color: white;
 			width: 20px;
 			height: 20px;
 			border-radius: 10px;
-			font-size: 24px;
+			font-size: 15px;
 			font-weight: 700;
 			display: inline-grid;
 			place-items: center;
@@ -658,7 +663,7 @@ text-align: center;
 .card-client {
   background-image: url('./Images/beautiful-blue-sky_23-2147609755.avif');
     background-size: cover;
-  width:50vw;
+  width:50%;
   padding-top: 25px;
   margin-top: 2%;
   padding-bottom: 25px;
@@ -895,7 +900,6 @@ inset -4px -4px 6px 0 rgba(255,255,255,.2),
 inset 4px 4px 6px 0 rgba(0, 0, 0, .4); 
 }
 .CArd img{
-/* height: 20vh; */
 margin: auto;
 margin-top: -10px;
 }
@@ -929,3 +933,30 @@ inset 4px 4px 6px 0 rgba(0, 0, 0, .4);
 background-image: url('./Images/beautiful-blue-sky_23-2147609755.avif');
   background-size: cover; 
 }
+.nt{
+  background: red;
+  padding: 1%;
+  margin-top: 1%;
+  color: white;
+  border-radius: 10px;
+  text-shadow: 2px 2px 4px skyblue;
+  box-shadow: 4px 4px 6px 0 rgba(255,255,255,.5),
+  -4px -4px 6px 0 rgba(136, 116, 127, 0.5), 
+inset -4px -4px 6px 0 rgba(255,255,255,.2),
+inset 4px 4px 6px 0 rgba(241, 0, 0, 0.979); 
+}
+.nth{
+  /* background-image: url('./Images/beautiful-blue-sky_23-2147609755.avif'); */
+  background: red;
+  padding: 1%;
+  margin-top: 1%;
+  border-radius: 10px;
+  color: white;
+  text-shadow: 2px 2px 4px skyblue;
+  box-shadow: 4px 4px 6px 0 rgba(255,255,255,.5),
+  -4px -4px 6px 0 rgba(136, 116, 127, 0.5), 
+inset -4px -4px 6px 0 rgba(255,255,255,.2),
+inset 4px 4px 6px 0 rgba(241, 0, 0, 0.979); 
+}
+
+

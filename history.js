@@ -387,3 +387,14 @@ function deleteAll() {
   localStorage.removeItem('ResName')
   deleteALl.style.display = 'none'
 }
+
+const ntCard = JSON.parse(localStorage.getItem('Searched'));
+const subicon = document.querySelector('.subicon');
+if(ntCard){
+  subicon.innerHTML = 1
+}
+
+const nthCard = JSON.parse(localStorage.getItem('Searched2'));
+if(nthCard && nthCard){
+  subicon.innerHTML = 2;
+}

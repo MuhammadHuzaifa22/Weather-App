@@ -3,9 +3,9 @@ const city = document.querySelector('#city');
 const form = document.querySelector('form');
 const cardsContainer = document.querySelector('#cards-container');
 const hthree = document.querySelector('h3');
-
-
-
+let searchArray = [];
+let searchIndex = 0;
+let tenSearchIndex = 0;
 form.addEventListener('submit', function(event) {
   event.preventDefault();
   if(city.value === ''  ){
@@ -101,7 +101,41 @@ form.addEventListener('submit', function(event) {
       `;
       const now = new Date();
       const localDate = now.toLocaleDateString();
-      const localTime = now.toLocaleTimeString();
+      var localTime = now.toLocaleTimeString();
+      searchIndex = 1;
+      searchArray.push(searchIndex)
+      console.log(searchArray)
+      console.log(searchIndex)
+      tenSearchIndex++
+      console.log(tenSearchIndex)
+      const ht = document.querySelector('.ht');
+      
+      if(searchIndex > 0){
+       var localTime = now.toLocaleTimeString();
+       ht.style.display ='none';
+       ht.innerHTML = `You searched ${searchIndex} card at <span id="sP">${localTime}</span>`
+       localStorage.setItem('Searched',JSON.stringify(ht.innerHTML))
+      }
+// for(i = 1; i <= tenSearchIndex ; i++){
+//   console.log(i)
+// }
+// let indEx = 0;
+
+// for (indEx = 0; indEx <= 100; indEx++) { // Adjust the upper limit as needed
+//   if (indEx % 10 === 0 && indEx !== 0) {
+//     console.log('You reached ' + indEx);
+//   }
+// }
+
+if(tenSearchIndex % 10 == 0 ){
+  var newNow = new Date()
+  var newlocalTime = newNow.toLocaleTimeString();
+  ht.innerHTML = `You searched ${tenSearchIndex} cards at ${localTime}`
+  console.log(ht.innerHTML)
+  localStorage.setItem('Searched2',JSON.stringify(ht.innerHTML))
+
+}
+
       localStorage.setItem('LocalTimeRes',JSON.stringify(localTime));
     localStorage.setItem('LocalDateRes',JSON.stringify(localDate))
       const top = document.getElementById('top');
@@ -114,7 +148,6 @@ form.addEventListener('submit', function(event) {
     abc.push(userCity);
     console.log(abc)
     if(abc != null){
-
       localStorage.setItem('abc',JSON.stringify(abc))
     }
     let abctwo = [];
@@ -126,7 +159,6 @@ form.addEventListener('submit', function(event) {
       localStorage.setItem('abctwo',JSON.stringify(abctwo));
     }
 let abcthree = [];
-let abcfour = [];
 // Get local date
 console.log(localDate); // This prints the current date in your local format
 abcthree.push(localDate)
@@ -134,16 +166,6 @@ if(abcthree != null){
   localStorage.setItem('abcthree',JSON.stringify(abcthree))
 
 }
-// Get local time
-// console.log(localTime); 
-// abcfour.push(localTime)
-
-// localStorage.setItem('abcfour',JSON.stringify(abcfour))
-//     arrAY.push(card.innerHTML)
-//     localStorage.setItem('CARD',JSON.stringify(arrAY));
-
- 
-
 
 
       city.value = ''   
@@ -165,6 +187,7 @@ if(abcthree != null){
         moreInfoButton.innerHTML = 'Show More <i class="fa-solid fa-angle-down" ></i>';
       }
     });
+    
     let del = 0;
     const deleteButton = card.querySelector('.delete-button');
     deleteButton.addEventListener('click', function() {
@@ -301,131 +324,6 @@ function toUnicodeVariant(str, variant, flags) {
   return result
 }
 
-let userData = localStorage.getItem('users');
-console.log(userData);
-let userdataJsonparse = JSON.parse(userData);
-console.log(userdataJsonparse)
-const hone = document.querySelector('h1');
-
-console.log(userdataJsonparse[0].username);
-const Nlocal = userdataJsonparse[0].username;
-const nLocal = localStorage.setItem('Nlocal',JSON.stringify(Nlocal))
-const card1 = document.querySelector('.cCard');
-let cardArr = [];
-let subIndex = 0;
-    if(userdataJsonparse[0].username != null){
-      card1.innerHTML = `Hi ${userdataJsonparse[0].username}! thank you for registering  my website <div class="centralize">
-      <div>
-      <button id="Read">
-        <span>Read</span>
-        <span><i class="fa-solid fa-check">Read</i></span>
-      </button>
-      <div>
-      
-      <div></div></div></div></div></div></div>
-      `
-      cardArr.push(card1.innerHTML)
-      console.log(card1.innerHTML)
-      console.log(cardArr)
-      let storedUser = localStorage.getItem('cardArr')
-let Users = storedUser ? JSON.parse(storedUser) : [];
-let UpdatedUsersJSON = JSON.stringify(Users);
-localStorage.setItem('cardArr', UpdatedUsersJSON);
-console.log(UpdatedUsersJSON)
-      for(let i = 0;i < cardArr.length; i++){
-        if(cardArr != null){
-
-          card1.style.display = 'none'
-          if(cardArr[0]){
-            const subicon = document.querySelector('.subicon');
-            subIndex++;
-            subicon.innerHTML = + subIndex;
-            console.log(subicon.innerHTML)
-          }
-        }
-        else{
-          hone.style.color = 'red'
-          hone.innerHTML = `You have not registered yet`
-        }
-      }
-  
-  const read = document.querySelector('#Read');
-  read.addEventListener('click',function(event){
-    event.preventDefault();
-    let storedUsers = localStorage.getItem('users');
-    let users = storedUsers ? JSON.parse(storedUsers) : [];
-      subIndex--;
-      // localStorage.removeItem('username');
-      card1.style.display = 'none'
-    //   Users.forEach(user => {
-    //     if (user.username) {
-    //         delete user.username;
-    //     }
-    // });
-    // localStorage.setItem('users', JSON.stringify(Users));
-    const subicon = document.querySelector('.subicon');
-    subicon.innerHTML = + subIndex;
-    // console.log()
-  })
-}
-
-
-///////////////////////////////////////////////////////////////////////////////////////
-
-let userDAta = localStorage.getItem('users');
-console.log(userDAta);
-let userdataJSonparse = JSON.parse(userDAta);
-console.log(userdataJSonparse[0].username);
-const carD1 = document.querySelector('.cCard');
-let cardARr = [];
-let subINdex = 0;
-    if(userdataJSonparse[0].username != null){
-      card1.innerHTML = `Hi ${userdataJSonparse[0].username}! thank you for registering  my website <div class="centralize">
-      <div>
-      <button id="Read">
-        <span>Read</span>
-        <span><i class="fa-solid fa-check">Read</i></span>
-      </button>
-      <div>
-      
-      <div></div></div></div></div></div></div>
-      `
-
-      cardArr.push(carD1.innerHTML)
-      console.log(carD1.innerHTML)
-      console.log(cardARr)
-      let storedUser = localStorage.getItem('cardArr')
-let Users = storedUser ? JSON.parse(storedUser) : [];
-let UpdatedUsersJSON = JSON.stringify(Users);
-localStorage.setItem('cardArr', UpdatedUsersJSON);
-      for(let i = 0;i < cardArr.length; i++){
-        if(cardArr != null){
-
-          card1.style.display = 'none'
-          if(cardARr[0]){
-            const subicon = document.querySelector('.subicon');
-            subIndex++;
-            subicon.innerHTML = + subIndex;
-console.log(subicon.innerHTML)
-          }
-        }
-        else{
-          hone.style.color = 'red'
-          hone.innerHTML = `You have not registered yet`
-        }
-      }
-  
-  const read = document.querySelector('#Read');
-  read.addEventListener('click',function(event){
-      event.preventDefault();
-    subIndex--;
-    const subicon = document.querySelector('.subicon');
-    subicon.innerHTML = + subIndex;
-    card1.style.display = 'none'
-  });
-    
-  
-}
 
 
 const commoncard = document.querySelector('.commconcards');
@@ -518,3 +416,14 @@ commoncardthree.innerHTML = `
 .catch((error) => {
   console.error('Error fetching weather data:', error);
 });
+
+
+const ntCard = JSON.parse(localStorage.getItem('Searched'));
+const subicon = document.querySelector('.subicon');
+if(ntCard){
+  subicon.innerHTML = 1
+}
+const nthCard = JSON.parse(localStorage.getItem('Searched2'));
+if(nthCard && nthCard){
+  subicon.innerHTML = 2;
+}
