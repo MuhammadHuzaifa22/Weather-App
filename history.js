@@ -343,10 +343,7 @@ if (ResName && ResLocalTime && ResCountry && ResIcon && ResCondition) {
   Res_Array.push(resObj);
   localStorage.setItem('Res_Array', JSON.stringify(Res_Array));
 }
-// const ResDate = JSON.parse(localStorage.getItem('abcthree'));
 console.log(Res_Array);
-// const ResTime = JSON.parse(localStorage.getItem('abcfour'));
-// console.log(ResTime[0])
 function renderCards() {
   const cardContainer = document.getElementById('new-card-container');
   cardContainer.innerHTML = ''; // Clear existing cards to avoid duplicates
@@ -398,3 +395,5 @@ const nthCard = JSON.parse(localStorage.getItem('Searched2'));
 if(nthCard && nthCard){
   subicon.innerHTML = 2;
 }
+const profSubicon = document.querySelector('.profSubicon');
+profSubicon.innerHTML = 1

@@ -243,8 +243,7 @@ nav {
 
 .nav-item {
 	flex-direction: row-reverse;
-	font-size:15px;
-  /* font-weight: bolder; */
+	font-size:18px;
 	line-height: 1rem;
 	align-items: center;
 	min-width: 40px;
@@ -257,7 +256,7 @@ text-decoration: none;
 color: white;
 }
 .nav-item a:hover{
-    color:black;
+    color:gainsboro;
     }
 	&.active {
 		text-shadow: 0 0 3px hsla(260, 100%, 70%, 0.7);
@@ -824,11 +823,10 @@ background: blue;
 }
 .hsix h6{
   color:black;font-weight: lighter;text-align: center;font-family: monospace;margin-top: 1%;font-size: 20px;background: white;padding: 1%;border-radius: 10px;
-  text-shadow: 2px 2px 4px rgba(0, 0, 255, 0.404);
-  box-shadow: 4px 4px 6px 0 rgba(255,255,255,.5),
+  /* box-shadow: 4px 4px 6px 0 rgba(255,255,255,.5),
               -4px -4px 6px 0 rgba(116, 125, 136, .5), 
     inset -4px -4px 6px 0 rgba(255,255,255,.2),
-    inset 4px 4px 6px 0 rgba(0, 0, 0, .4);
+    inset 4px 4px 6px 0 rgba(0, 0, 0, .4); */
 
 }
 .hsix{
@@ -934,21 +932,35 @@ background-image: url('./Images/beautiful-blue-sky_23-2147609755.avif');
   background-size: cover; 
 }
 .nt{
-  background: red;
+  /* background: red; */
   padding: 1%;
   margin-top: 1%;
-  color: white;
+  color: black;
   border-radius: 10px;
   text-shadow: 2px 2px 4px skyblue;
-  box-shadow: 4px 4px 6px 0 rgba(255,255,255,.5),
+  /* box-shadow: 4px 4px 6px 0 rgba(255,255,255,.5),
   -4px -4px 6px 0 rgba(136, 116, 127, 0.5), 
 inset -4px -4px 6px 0 rgba(255,255,255,.2),
-inset 4px 4px 6px 0 rgba(241, 0, 0, 0.979); 
+inset 4px 4px 6px 0 rgba(241, 0, 0, 0.979);  */
 }
 .nth{
   /* background-image: url('./Images/beautiful-blue-sky_23-2147609755.avif'); */
-  background: red;
+  /* background: red; */
   padding: 1%;
+  margin-top: 1%;
+  border-radius: 10px;
+  color: black;
+  text-shadow: 2px 2px 4px skyblue;
+  /* box-shadow: 4px 4px 6px 0 rgba(255,255,255,.5),
+  -4px -4px 6px 0 rgba(136, 116, 127, 0.5), 
+inset -4px -4px 6px 0 rgba(255,255,255,.2),
+inset 4px 4px 6px 0 rgba(241, 0, 0, 0.979);  */
+}
+
+
+.outLog{
+  background: red;
+  padding: 2px;
   margin-top: 1%;
   border-radius: 10px;
   color: white;
@@ -957,6 +969,5 @@ inset 4px 4px 6px 0 rgba(241, 0, 0, 0.979);
   -4px -4px 6px 0 rgba(136, 116, 127, 0.5), 
 inset -4px -4px 6px 0 rgba(255,255,255,.2),
 inset 4px 4px 6px 0 rgba(241, 0, 0, 0.979); 
+text-align: center;
 }
-
-

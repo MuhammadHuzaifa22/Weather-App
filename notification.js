@@ -103,17 +103,24 @@
 const nt = document.querySelector('.nt');
 const ntCard = JSON.parse(localStorage.getItem('Searched'));
 console.log(ntCard)
+if(ntCard){
+
   nt.innerHTML = `${ntCard}`
+}
 const subicon = document.querySelector('.subicon');
 if(ntCard){
   subicon.innerHTML = 1
 }
 const nth = document.querySelector('.nth');
 const nthCard = JSON.parse(localStorage.getItem('Searched2'));
-nth.innerHTML = `${nthCard}`;
+if(nthCard){
+  nth.innerHTML = `${nthCard}`;
+}
+
 if(nthCard && nthCard){
   subicon.innerHTML = 2
 }
 
-
+const profSubicon = document.querySelector('.profSubicon');
+profSubicon.innerHTML = 1
 

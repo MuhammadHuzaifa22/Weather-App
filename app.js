@@ -116,16 +116,7 @@ form.addEventListener('submit', function(event) {
        ht.innerHTML = `You searched ${searchIndex} card at <span id="sP">${localTime}</span>`
        localStorage.setItem('Searched',JSON.stringify(ht.innerHTML))
       }
-// for(i = 1; i <= tenSearchIndex ; i++){
-//   console.log(i)
-// }
-// let indEx = 0;
 
-// for (indEx = 0; indEx <= 100; indEx++) { // Adjust the upper limit as needed
-//   if (indEx % 10 === 0 && indEx !== 0) {
-//     console.log('You reached ' + indEx);
-//   }
-// }
 
 if(tenSearchIndex % 10 == 0 ){
   var newNow = new Date()
@@ -325,105 +316,17 @@ function toUnicodeVariant(str, variant, flags) {
 }
 
 
-
-const commoncard = document.querySelector('.commconcards');
-
-const London = axios(
-  `https://api.weatherapi.com/v1/current.json?key=dae9933c87e147abadb51806241406&q=London&aqi=no`
-)
-.then((rEsponse)=>{
-  console.log(rEsponse.data.location);
-  const Location = rEsponse.data.location;
-  const Current = rEsponse.data.current
-
-  commoncard.innerHTML = `
-    <div class="commonCard">
-      <h2 style="text-align:center"><b>${Location.name}</b></h2>
-      <h3 style="text-align:center"><b>${Current.temp_c}°C</b></h3>
-      <p style="text-align:center;">Country: ${Location.country}</p>
-      <p style="text-align:center">Local Time: ${Location.localtime}</p>
-    </div>
-  `;
-  })
-  .catch((error) => {
-    console.error('Error fetching weather data:', error);
-  });
-
-  const commoncardone = document.querySelector('.commconcardsone');
- const Karachi = axios(
-  `https://api.weatherapi.com/v1/current.json?key=dae9933c87e147abadb51806241406&q=Karachi&aqi=no`
-)
-.then((response)=>{
-console.log(response.data.location);
-const location = response.data.location;
-const current = response.data.current;
-
-commoncardone.innerHTML = `
-  <div class="commonCard">
-    <h2 style="text-align:center"><b>${location.name}</b></h2>
-    <h3 style="text-align:center"><b>${current.temp_c}°C</b></h3>
-    <p style="text-align:center;">Country: ${location.country}</p>
-    <p style="text-align:center">Local Time: ${location.localtime}</p>
-  </div>
-`;
-})
-.catch((error) => {
-  console.error('Error fetching weather data:', error);
-});
-
-const commoncardtwo = document.querySelector('.commconcardstwo');
- const NewDelhi = axios(
-  `https://api.weatherapi.com/v1/current.json?key=dae9933c87e147abadb51806241406&q=India&aqi=no`
-)
-.then((reSponse)=>{
-console.log(reSponse.data.location);
-const lOcation = reSponse.data.location;
-const cUrrent = reSponse.data.current;
-
-commoncardtwo.innerHTML = `
-  <div class="commonCard">
-  <h2 style="text-align:center"><b>${lOcation.name}</b></h2>
-  <h3 style="text-align:center"><b>${cUrrent.temp_c}°C</b></h3>
-    <p style="text-align:center;">Country: ${lOcation.country}</p>
-    <p style="text-align:center">Local Time: ${lOcation.localtime}</p>
-  </div>
-`;
-})
-.catch((error) => {
-  console.error('Error fetching weather data:', error);
-});
-
-const commoncardthree = document.querySelector('.commconcardsthree');
-const commoncardfour = document.querySelector('.commconcardsfour');
-
- const Washington = axios(
-  `https://api.weatherapi.com/v1/current.json?key=dae9933c87e147abadb51806241406&q=United States of America&aqi=no`
-)
-.then((reSPonse)=>{
-console.log(reSPonse.data.location);
-const lOCation = reSPonse.data.location;
-const cURRent = reSPonse.data.current
-commoncardthree.innerHTML = `
-  <div class="commonCard">
-    <h2 style="text-align:center"><b>${lOCation.name}</b></h2>
-    <h3 style="text-align:center"><b>${cURRent.temp_c}°C</b></h3>
-    <p style="text-align:center;">Country: ${lOCation.country}</p>
-    <p style="text-align:center">Local Time: ${lOCation.localtime}</p>
-  </div>
-`;
-
-})
-.catch((error) => {
-  console.error('Error fetching weather data:', error);
-});
-
-
 const ntCard = JSON.parse(localStorage.getItem('Searched'));
 const subicon = document.querySelector('.subicon');
 if(ntCard){
-  subicon.innerHTML = 1
+  subicon.innerHTML = 1;
 }
 const nthCard = JSON.parse(localStorage.getItem('Searched2'));
 if(nthCard && nthCard){
   subicon.innerHTML = 2;
 }
+const profSubicon = document.querySelector('.profSubicon');
+profSubicon.innerHTML = 1
+
+
+
