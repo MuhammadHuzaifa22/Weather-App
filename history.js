@@ -395,5 +395,3 @@ const nthCard = JSON.parse(localStorage.getItem('Searched2'));
 if(nthCard && nthCard){
   subicon.innerHTML = 2;
 }
-const profSubicon = document.querySelector('.profSubicon');
-profSubicon.innerHTML = 1

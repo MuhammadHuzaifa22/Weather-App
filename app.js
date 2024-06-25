@@ -319,14 +319,14 @@ function toUnicodeVariant(str, variant, flags) {
 const ntCard = JSON.parse(localStorage.getItem('Searched'));
 const subicon = document.querySelector('.subicon');
 if(ntCard){
-  subicon.innerHTML = 1;
+  subicon.innerHTML = 1
 }
+
 const nthCard = JSON.parse(localStorage.getItem('Searched2'));
 if(nthCard && nthCard){
   subicon.innerHTML = 2;
 }
-const profSubicon = document.querySelector('.profSubicon');
-profSubicon.innerHTML = 1
+
 
 
 
